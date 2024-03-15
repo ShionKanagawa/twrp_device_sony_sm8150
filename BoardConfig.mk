@@ -232,6 +232,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 TW_USE_FSCRYPT_POLICY := 1
+TW_NO_FASTBOOT_BOOT := true
 
 # TWRP Debug Flags
 TARGET_USES_LOGD := true
