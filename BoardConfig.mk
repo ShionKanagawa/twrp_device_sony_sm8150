@@ -180,7 +180,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
-TARGET_OTA_ASSERT_DEVICE := griffin
 TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
     libxml2 \
@@ -206,7 +205,7 @@ RECOVERY_SDCARD_ON_DATA := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
-TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_NTFS_3G := false
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LIBRESETPROP := true
@@ -215,9 +214,8 @@ TW_MAX_BRIGHTNESS := 4095
 TW_NO_SCREEN_BLANK := true
 #TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_FUSE_EXFAT := true
-TW_INCLUDE_FUSE_NTFS := true
+TW_INCLUDE_FUSE_NTFS := false
 LC_ALL="C"
-TW_DEVICE_VERSION := _Ferdian™ Inc-10
 TW_ROUND_SCREEN := true
 TWRP_NEW_THEME := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
@@ -225,7 +223,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 TW_USE_FSCRYPT_POLICY := 1
-TW_LOAD_VENDOR_MODULES := "texfat.ko sec_touchscreen.ko sec_touchscreen_2.ko et580-int.ko tcs3490.ko"
 
 # TWRP Debug Flags
 TARGET_USES_LOGD := true
@@ -242,3 +239,5 @@ TW_EXCLUDE_TWRPAPP := true
 TW_USE_TOOLBOX := true
 TW_USE_QCOM_HAPTICS_VIBRATOR := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_NANO := true

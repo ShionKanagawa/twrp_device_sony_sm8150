@@ -50,14 +50,6 @@ PRODUCT_PACKAGES += \
     bootctrl.$(PRODUCT_PLATFORM) \
     bootctrl.$(PRODUCT_PLATFORM).recovery
 
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    fastbootd
-
-# Copy modules for depmod
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*.ko,$(DEVICE_PATH)/prebuilt,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules)
-
 # disable this for twrp 12.1+
 # Apex libraries
 PRODUCT_COPY_FILES += \
@@ -85,6 +77,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_HOST_PACKAGES += \
     libandroidicu
+
+# EXT4 and F2FS
+PRODUCT_PACKAGES += \
+    mkfs.f2fs \
+    fsck.f2fs \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

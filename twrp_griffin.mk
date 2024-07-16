@@ -23,7 +23,6 @@ DEVICE_PATH := device/sony/griffin
 
 $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
 $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -32,7 +31,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Inherit some common twrp stuff.
-$(call inherit-product-if-exists, vendor/twrp/config/gsm.mk)
 $(call inherit-product-if-exists, vendor/twrp/config/common.mk)
 
 # Device identifier. This must come after all inclusions

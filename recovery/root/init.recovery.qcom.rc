@@ -36,8 +36,6 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
 on boot 
-    insmod /vendor/lib/modules/sec_touchscreen.ko
-    insmod /vendor/lib/modules/sec_touchscreen_2.ko
     write /sys/devices/virtual/sec/tsp/after_work 1
     write /proc/touchpanel/gesture_enable 1
     start boot-hal-1-0
