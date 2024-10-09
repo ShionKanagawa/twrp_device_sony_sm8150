@@ -15,10 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_griffin.mk \
     $(LOCAL_DIR)/twrp_bahamut.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_griffin-user \
-    twrp_griffin-userdebug \
-    twrp_griffin-eng
+    twrp_bahamut-user \
+    twrp_bahamut-userdebug \
+    twrp_bahamut-eng

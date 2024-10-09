@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),griffin)
+ifeq ($(TARGET_DEVICE),bahamut)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

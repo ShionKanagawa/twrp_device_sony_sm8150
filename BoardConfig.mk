@@ -23,14 +23,13 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-DEVICE_PATH := device/sony/griffin
+DEVICE_PATH := device/sony/bahamut
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := J9110,J9210,J8110,J8170,J9150,J9180,SO-03L,SOV40,802SO,J8210,J8270,J9260,SO-01M,SOV41,901SO
-
+TARGET_OTA_ASSERT_DEVICE := J9210,J8210,J8270,J9260,SO-01M,SOV41,901SO
 # A/B updater updatable partitions list. Keep in sync with the partition list
 # with "_a" and "_b" variants in the device. Note that the vendor can add more
 # more partitions to this list for the bootloader and radio.
@@ -91,8 +90,8 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/sony/griffin
-TARGET_KERNEL_CONFIG := griffin_defconfig
+TARGET_KERNEL_SOURCE := kernel/sony/sm8150
+TARGET_KERNEL_CONFIG := bahamut_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := $(TARGET_BOOTLOADER_BOARD_NAME)

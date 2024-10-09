@@ -1,8 +1,8 @@
-# TWRP device tree for Xperia 1
+# TWRP device tree for Xperia 5
 
-Xperia 1 (codenamed _"griffin"_) is a high-end smartphone from Sony.
+Xperia 5 (codenamed _"bahamut"_) is a high-end smartphone from Sony.
 
-It was announced & released on February 2019.
+It was announced & released on September 2019.
 
 ## Device specifications
 
@@ -14,12 +14,12 @@ GPU     | Adreno 640
 Memory  | 6 GB RAM
 Shipped Android Version | 9.0
 Storage | 64/128 GB
-Battery | Li-Ion 3300 mAh, non-removable, graphene-enhanced
-Display | 1644 x 3840 pixels, 21:9 ratio (~642 ppi density), 6.50 inches, OLED, 60Hz, Dolby Vision, HDR10+
+Battery | Li-Ion 3140 mAh, non-removable, graphene-enhanced
+Display | 1080 x 2520 pixels, 21:9 ratio (~449 ppi density), 6.10 inches, OLED, 60Hz, Dolby Vision, HDR10+
 
 ## Device picture
 
-![Xperia 1](https://www.sony.com.hk/image/5eb042f99b9b7307f2d447527fdd83a2?fmt=pjpeg&wid=4000&qlt=43)
+![Xperia 5](https://www.sony.com.hk/image/76b0287376e45760c6ab770a916fb36c?fmt=pjpeg&wid=4000&qlt=43)
 
 ## Features
 

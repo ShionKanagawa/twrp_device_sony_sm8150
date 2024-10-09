@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-LOCAL_PATH := device/sony/griffin
+LOCAL_PATH := device/sony/bahamut
 
 # A/B
 PRODUCT_PACKAGES += \
