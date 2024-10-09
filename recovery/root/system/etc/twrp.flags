@@ -3,8 +3,6 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 # mount point   fstype       device                 device2                       flags
-/data            ext4      /dev/block/bootdevice/by-name/userdata                 flags=fileencryption=ice:aes-256-cts
-/metadata        emmc      /dev/block/bootdevice/by-name/metadata
 /boot            emmc      /dev/block/bootdevice/by-name/boot                     flags=backup=1;slotselect;flashimg
 /dtbo            emmc      /dev/block/bootdevice/by-name/dtbo                     flags=backup=1;slotselect;flashimg
 /super_system    emmc      /dev/block/bootdevice/by-name/system                   flags=backup=1;display="Super_system";wipeingui;slotselect
