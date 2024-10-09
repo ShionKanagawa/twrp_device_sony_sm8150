@@ -192,7 +192,6 @@ TARGET_NO_RECOVERY := true
 TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
     libxml2 \
-    android.hardware.boot@1.0 \
     libandroidicu
 
 RECOVERY_LIBRARY_SOURCE_FILES += \
