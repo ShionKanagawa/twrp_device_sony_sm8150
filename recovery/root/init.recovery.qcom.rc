@@ -27,20 +27,60 @@
 
 import /init.recovery.qcom_decrypt.rc
 
-on init
-    setprop crypto.ready 1
+on early-fs
+    write /proc/sys/kernel/sched_lib_name "recovery,Updater,updater"
+    write /proc/sys/kernel/sched_lib_mask_force 255
+    start vold
 
 on fs
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
+    chmod 0666 /sys/class/qcom-haptics/lra_calibration
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    chmod 0660 /dev/qseecom
+    chown system drmrpc /dev/qseecom
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
+    install_keyring
 
-on boot 
+on init
+    start vendor.qseecomd
+    start boot-hal-1-1
+
+on boot
+    start health-hal-2-1
+    setprop sys.usb.config adb
+    start vibrator-service
     write /sys/devices/virtual/sec/tsp/after_work 1
     write /proc/touchpanel/gesture_enable 1
-    start boot-hal-1-0
-    start vibrator-service
-    setprop sys.usb.config adb,mtp
+    write /sys/module/sec_touchscreen/parameters/report_rejected_event 1
+    chown system system /sys/devices/virtual/sec/tsp/module_id
+    chmod 0600 /sys/devices/virtual/sec/tsp/module_id
+    chown system system /sys/devices/virtual/sec/tsp/cmd
+    chown system system /sys/devices/dsi_panel_driver/pre_sod_mode
+    chmod 0600 /sys/devices/virtual/sec/tsp/cmd
+
+on property:vendor.sys.listeners.registered=true
+    start keymaster-4-0
+    start gatekeeper-1-0
+
+service vendor.qseecomd /vendor/bin/qseecomd
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymaster-4-0 /vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
 
 service time_daemon /system/bin/time_daemon
     user root
